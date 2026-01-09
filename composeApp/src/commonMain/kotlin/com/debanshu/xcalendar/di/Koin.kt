@@ -5,6 +5,7 @@ import com.debanshu.xcalendar.data.localDataSource.CalendarDao
 import com.debanshu.xcalendar.data.localDataSource.EventDao
 import com.debanshu.xcalendar.data.localDataSource.HolidayDao
 import com.debanshu.xcalendar.data.localDataSource.UserDao
+import com.debanshu.xcalendar.data.localDataSource.TaskDao
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.serialization.kotlinx.json.json
@@ -57,6 +58,9 @@ class DataModule {
     @Single
     fun getHolidayEntityDao(appDatabase: AppDatabase): HolidayDao =
         appDatabase.getHolidayEntityDao()
+
+    @Single
+    fun getTaskDao(appDatabase: AppDatabase): TaskDao = appDatabase.getTaskDao()
 }
 
 @Module

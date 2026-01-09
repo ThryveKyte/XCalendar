@@ -49,7 +49,6 @@ import kotlinx.serialization.modules.SerializersModule
 import kotlinx.serialization.modules.polymorphic
 import org.koin.compose.koinInject
 import org.koin.compose.viewmodel.koinViewModel
-
 private val config =
     SavedStateConfiguration {
         serializersModule =

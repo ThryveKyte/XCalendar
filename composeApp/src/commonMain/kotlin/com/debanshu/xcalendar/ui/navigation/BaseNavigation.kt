@@ -14,6 +14,7 @@ import com.debanshu.xcalendar.domain.states.dateState.DateStateHolder
 import com.debanshu.xcalendar.ui.screen.dayScreen.DayScreen
 import com.debanshu.xcalendar.ui.screen.monthScreen.MonthScreen
 import com.debanshu.xcalendar.ui.screen.scheduleScreen.ScheduleScreen
+import com.debanshu.xcalendar.ui.screen.taskScreen.TaskScreen
 import com.debanshu.xcalendar.ui.screen.threeDayScreen.ThreeDayScreen
 import com.debanshu.xcalendar.ui.screen.weekScreen.WeekScreen
 import kotlinx.collections.immutable.ImmutableList
@@ -87,6 +88,9 @@ fun NavigationHost(
                         holidays = holidays,
                         onEventClick = onEventClick,
                     )
+                }
+                entry(NavigableScreen.Tasks) {
+                    TaskScreen()
                 }
             },
     )

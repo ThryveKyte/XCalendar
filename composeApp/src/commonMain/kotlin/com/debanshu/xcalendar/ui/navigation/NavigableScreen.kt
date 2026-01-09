@@ -18,4 +18,7 @@ sealed interface NavigableScreen : NavKey {
 
     @Serializable
     data object Month : NavigableScreen
+
+    @Serializable
+    data object Tasks : NavigableScreen
 }

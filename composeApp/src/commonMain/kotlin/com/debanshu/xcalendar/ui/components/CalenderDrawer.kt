@@ -33,6 +33,7 @@ import com.skydoves.landscapist.coil3.CoilImage
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Regular
 import compose.icons.fontawesomeicons.Solid
+import compose.icons.fontawesomeicons.regular.CheckCircle
 import compose.icons.fontawesomeicons.regular.ListAlt
 import compose.icons.fontawesomeicons.solid.CalendarAlt
 import compose.icons.fontawesomeicons.solid.CalendarDay
@@ -98,6 +99,18 @@ internal fun CalendarDrawer(
             selected = selectedView is NavigableScreen.Month,
             icon = FontAwesomeIcons.Solid.CalendarAlt,
             onClick = { onViewSelect(NavigableScreen.Month) },
+        )
+
+        HorizontalDivider(
+            modifier = Modifier.padding(vertical = 8.dp),
+            color = XCalendarTheme.colorScheme.surfaceVariant,
+        )
+
+        CalendarViewOption(
+            name = "Tasks",
+            selected = selectedView is NavigableScreen.Tasks,
+            icon = FontAwesomeIcons.Regular.CheckCircle,
+            onClick = { onViewSelect(NavigableScreen.Tasks) },
         )
 
         HorizontalDivider(

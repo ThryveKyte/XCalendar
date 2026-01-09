@@ -9,6 +9,7 @@ import com.debanshu.xcalendar.data.localDataSource.model.EventEntity
 import com.debanshu.xcalendar.data.localDataSource.model.EventReminderEntity
 import com.debanshu.xcalendar.data.localDataSource.model.HolidayEntity
 import com.debanshu.xcalendar.data.localDataSource.model.UserEntity
+import com.debanshu.xcalendar.data.localDataSource.model.TaskEntity
 
 @Database(
     entities = [
@@ -16,7 +17,9 @@ import com.debanshu.xcalendar.data.localDataSource.model.UserEntity
         CalendarEntity::class,
         EventEntity::class,
         EventReminderEntity::class,
-        HolidayEntity::class],
+        HolidayEntity::class,
+        TaskEntity::class
+    ],
     version = 1
 )
 @ConstructedBy(LocalDatabaseConstructor::class)
@@ -25,6 +28,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getCalendarEntityDao(): CalendarDao
     abstract fun getEventEntityDao(): EventDao
     abstract fun getHolidayEntityDao(): HolidayDao
+    abstract fun getTaskDao(): TaskDao
 }
 
 // The Room compiler generates the `actual` implementations.
